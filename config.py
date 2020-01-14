@@ -14,5 +14,5 @@ result_dir = 'results'
 data_dir = 'datasets'
 cache_dir = 'cache'
 run_dir_ignore = ['results', 'datasets', 'cache']
-
+pretrained_model_path = 'cache/karras2019stylegan-ffhq-1024x1024.pkl'
 #----------------------------------------------------------------------------
