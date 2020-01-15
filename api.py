@@ -1,5 +1,8 @@
 import pickle
 import numpy as np
+import os
+from os.path import join
+import cv2
 
 import config
 from config import dlatent_path, emotion_map, color_map
@@ -84,13 +87,20 @@ def run(image_id1, task_type, weight, image_id2=None, choice=None):
     assert task_type != 'fuse' or image_id2 is not None
     
     if task_type == 'fuse':
-        return run_fuse(image_id1, image_id2, weight)
+        res = run_fuse(image_id1, image_id2, weight)
     elif task_type == 'emotion':
         assert choice in emotion_map
-        return run_emotion(image_id1, weight, choice)
+        res = run_emotion(image_id1, weight, choice)
     elif task_type == 'hair':
         assert choice in color_map
-        return run_emotion(image_id1, weight, choice)
+        res = run_emotion(image_id1, weight, choice)
     else:
-        return run_simple(image_id1, weight, task_type)
+        res = run_simple(image_id1, weight, task_type)
+    
+    if isinstance(res, list):
+        for i, image in enumerate(res):
+            res[i] = cv2.resize(image, (128, 128))
+    else:
+        res = cv2.resize(res, (128, 128))
+    return res
     
