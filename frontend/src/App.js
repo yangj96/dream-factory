@@ -5,6 +5,38 @@ import './App.css'
 const { Header, Content, Footer } = Layout;
 const { Panel } = Collapse;
 
+const bluePanelStyle = {
+  background: '#4285F4',
+  borderRadius: 4,
+  marginBottom: 24,
+  border: 0,
+  overflow: 'hidden',
+};
+
+const redPanelStyle = {
+  background: '#EA4335',
+  borderRadius: 4,
+  marginBottom: 24,
+  border: 0,
+  overflow: 'hidden',
+};
+
+const yellowPanelStyle = {
+  background: '#FBBC05',
+  borderRadius: 4,
+  marginBottom: 24,
+  border: 0,
+  overflow: 'hidden',
+};
+
+const greenPanelStyle = {
+  background: '#34A853',
+  borderRadius: 4,
+  marginBottom: 24,
+  border: 0,
+  overflow: 'hidden',
+};
+
 class App extends React.Component<> {
   render() {
     return (
@@ -18,7 +50,7 @@ class App extends React.Component<> {
           <Breadcrumb style={{margin: '16px 0'}}>
           </Breadcrumb>
           {/* select image block*/}
-          <Card title="Select a image and have a try!">
+          <Card title="Select an image and have a try!">
             <Row gutter={12}>
               <Col span={4}>
                 <Card t hoverable
@@ -79,16 +111,22 @@ class App extends React.Component<> {
           <br />
           {/* Multiple Transform*/}
           <Collapse defaultActiveKey={['1']}>
-            <Panel header="Emotion Transform" key="1">
+            <Panel header="Emotion Transform" key="1" style={bluePanelStyle}>
 
             </Panel>
-            <Panel header="Smile Transform" key="2">
+            <Panel header="Smile Transform" key="2" style={redPanelStyle}>
 
             </Panel>
-            <Panel header="Age Transform" key="3">
+            <Panel header="Age Transform" key="3" style={yellowPanelStyle}>
 
             </Panel>
-            <Panel header="Sex Transform" key="4">
+            <Panel header="Sex Transform" key="4" style={bluePanelStyle}>
+
+            </Panel>
+            <Panel header="Sex Transform" key="4" style={greenPanelStyle}>
+
+            </Panel>
+            <Panel header="Sex Transform" key="4" style={yellowPanelStyle}>
 
             </Panel>
           </Collapse>
