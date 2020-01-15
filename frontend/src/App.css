@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.logo {
+  height: 31px;
+  margin: 16px;
+  float: left;
+  position: absolute;
+  left: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: #eaeaea;
+}
