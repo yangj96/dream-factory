@@ -63,12 +63,14 @@ def main(_):
         # res = face_cascade.detectMultiScale(image_gray)
         detector = dlib.get_frontal_face_detector() # cnn_face_detection_model_v1 also can be used
         res  = detector(image_gray, 1)
-        
+        print(res)
+        if len(res) == 0:
+            continue
         # Create the cropped image.
         # print(res[0])
         (x, y, res_width, res_height) = rect_to_bb(res[0])
         minn = min(image.height, image.width)
-        face_center = (x + res_width//2, y + res_height//2)
+        face_center = (x + res_width//2, y + res_height//3)
         crop_half_x = min(res_width * 0.9, min(face_center[0], image.width - face_center[0]))
         crop_half_y = min(res_height * 0.9, min(face_center[1], image.height - face_center[1]))
         crop_half_v = int(min(crop_half_x, crop_half_y))
