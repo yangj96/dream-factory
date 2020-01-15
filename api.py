@@ -102,5 +102,5 @@ def run(image_id1, task_type, weight, image_id2=None, choice=None):
             res[i] = cv2.resize(image, (128, 128))
     else:
         res = cv2.resize(res, (128, 128))
-    return res
+    return [res]
     

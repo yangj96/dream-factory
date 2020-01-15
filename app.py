@@ -60,12 +60,13 @@ def generate_image():
         abort(404)
    
     start = time.time()
-    image = API.run(image_id1, task_type, weight, image_id2=image_id2)
+    images = API.run(image_id1, task_type, weight, image_id2=image_id2)
     print('Cost', time.time() - start)
   
-    res = base64.b64encode(image)
+   
+    images = [base64.b64encode(image).decode('ascii') for image in images]
     
-    return jsonify(images=[res.decode('ascii')])
+    return jsonify(images=images)
 
 
 class JSONEncoder(json.JSONEncoder):
