@@ -17,6 +17,7 @@ run_dir_ignore = ['results', 'datasets', 'cache']
 
 analysis_data_path = './cache/latent_training_data.pkl'
 model_url = './cache/karras2019stylegan-ffhq-1024x1024.pkl'
+pretrained_model_path = 'cache/karras2019stylegan-ffhq-1024x1024.pkl'
 
 color_map = {'brown': 0, 'gray': 1, 'blond': 2, 'black': 3, 'red': 4}
 

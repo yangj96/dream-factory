@@ -4,4 +4,5 @@ __pycache__/
 **/*.pkl
 data/
 examples/
+**/__pycache__
 
