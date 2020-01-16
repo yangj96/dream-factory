@@ -75,7 +75,8 @@ def generate_image():
     weight = request.args.get('weight')
     task_type = request.args.get('task_type')
     choice = request.args.get('choice')
-    print(image_id1, image_id2, weight, task_type)
+    resolution = request.args.get('resolution')
+    print(image_id1, image_id2, weight, task_type, resolution)
 
     if image_id1 is None or task_type is None:
         abort(404)
@@ -84,9 +85,12 @@ def generate_image():
             weight = float(weight)
         except:
             abort(404)
+    if resolution is not None:
+        try: resolution = int(resolution)
+        except: abort(404)
 
     start = time.time()
-    images = API.run(image_id1, task_type, weight, image_id2=image_id2, choice=choice)
+    images = API.run(image_id1, task_type, weight, image_id2=image_id2, choice=choice, resolution=resolution)
     print('Cost', time.time() - start)
 
     for i, image in enumerate(images):

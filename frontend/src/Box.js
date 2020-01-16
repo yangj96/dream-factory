@@ -10,12 +10,12 @@ const task_to_title = {
     fuse: 'Change Face',
     gender: 'Change Gender',
     age: 'Change Age',
-    makeup: 'Makeup (Removal)',
+    makeup: 'Makeup / Makeup Cleansing',
     hair: 'Change Hair Color',
     emotion: 'Change Emotion',
-    glasses: 'Wear Glasses',
+    glasses: 'Wear / Take off Glasses',
     head_yaw: 'Yaw Head',
-    facial_hair: 'Change Mustache',
+    facial_hair: 'Change Beard',
     exposure: 'Whitening',
     smile: 'Change Smile',
 };
@@ -176,7 +176,8 @@ class Box extends React.Component<> {
             weight: weight,
             task_type: this.props.task_type,
             image_id1: this.state.image_id,
-            choice: this.state.choice
+            choice: this.state.choice,
+            resolution: config.resolution
         });
         fetch(url,{
             method: 'GET',

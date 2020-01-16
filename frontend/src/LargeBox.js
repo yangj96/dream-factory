@@ -100,7 +100,8 @@ class LargeBox extends React.Component<> {
         const url = getUrl(config.backend + 'run', {
             task_type: this.props.task_type,
             image_id1: image_id1,
-            image_id2: image_id2
+            image_id2: image_id2,
+            resolution: config.resolution
         })
         fetch(url,{
             method: 'GET',

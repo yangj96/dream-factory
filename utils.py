@@ -12,7 +12,7 @@ class Shower():
         self.objs.append(obj)
 
     def show(self, save_name=None):
-        plt.subplots_adjust(wspace=0)
+        plt.subplots_adjust(left=0, top=1, right=1, bottom=0, wspace=0, hspace=0)
         n, row, col = len(self.objs), (len(self.objs) + self.col - 1) // self.col, self.col
         for i, obj in enumerate(self.objs):
             image = obj['image']

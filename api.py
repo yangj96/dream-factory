@@ -84,7 +84,7 @@ def run_hair(image_id, weight, choice):
     res = generator.generate_images(dlatent)[0]
     return res
 
-def run(image_id1, task_type, weight, image_id2=None, choice=None):
+def run(image_id1, task_type, weight, image_id2=None, choice=None, resolution=None):
     assert task_type in tasks
     assert task_type != 'fuse' or image_id2 is not None
     
@@ -99,11 +99,12 @@ def run(image_id1, task_type, weight, image_id2=None, choice=None):
     else:
         res = run_simple(image_id1, weight, task_type)
     
+    size = resolution if resolution else 200
     if isinstance(res, list):
         for i, image in enumerate(res):
-            res[i] = cv2.resize(image, (200, 200))
+            res[i] = cv2.resize(image, (size, size))
     else:
-        res = cv2.resize(res, (200, 200))
+        res = cv2.resize(res, (size, size))
         res = [res]
     return res
     

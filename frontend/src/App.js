@@ -30,19 +30,20 @@ class App extends React.Component<> {
         <div className='boxContainer'>
           <LargeBox task_type='fuse' color='blue' image_id1='67138' image_id2='67139' image_ids={this.state.image_ids} image_names={this.state.image_names}/>
 
-          <Box task_type='makeup' color='yellow' image_id={this.state.init_image_id} image_ids={this.state.image_ids} image_names={this.state.image_names}/>
-          <Box task_type='glasses' color='green' image_id={this.state.init_image_id} image_ids={this.state.image_ids} image_names={this.state.image_names}/>
+          <Box task_type='emotion' color='red' image_id={this.state.init_image_id} image_ids={this.state.image_ids} image_names={this.state.image_names}/>
 
-          <Box task_type='hair' color='red' image_id={this.state.init_image_id} image_ids={this.state.image_ids} image_names={this.state.image_names}/>
-          <Box task_type='emotion' color='blue' image_id={this.state.init_image_id} image_ids={this.state.image_ids} image_names={this.state.image_names}/>
+          <Box task_type='makeup' color='green' image_id={this.state.init_image_id} image_ids={this.state.image_ids} image_names={this.state.image_names}/>
+          <Box task_type='glasses' color='yellow' image_id={this.state.init_image_id} image_ids={this.state.image_ids} image_names={this.state.image_names}/>
+
+          <Box task_type='facial_hair' color='blue' image_id={this.state.init_image_id} image_ids={this.state.image_ids} image_names={this.state.image_names}/>
           
-          <Box task_type='age' color='green' image_id={this.state.init_image_id} image_ids={this.state.image_ids} image_names={this.state.image_names}/>
-          <Box task_type='gender' color='yellow' image_id={this.state.init_image_id} image_ids={this.state.image_ids} image_names={this.state.image_names}/>
+          <Box task_type='age' color='blue' image_id={this.state.init_image_id} image_ids={this.state.image_ids} image_names={this.state.image_names}/>
+          <Box task_type='gender' color='red' image_id={this.state.init_image_id} image_ids={this.state.image_ids} image_names={this.state.image_names}/>
       
-          <Box task_type='facial_hair' color='red' image_id={this.state.init_image_id} image_ids={this.state.image_ids} image_names={this.state.image_names}/>
-          <Box task_type='exposure' color='blue' image_id={this.state.init_image_id} image_ids={this.state.image_ids} image_names={this.state.image_names}/>
-          <Box task_type='smile' color='green' image_id={this.state.init_image_id} image_ids={this.state.image_ids} image_names={this.state.image_names}/>
-          <Box task_type='head_yaw' color='yellow' image_id={this.state.init_image_id} image_ids={this.state.image_ids} image_names={this.state.image_names}/>
+          <Box task_type='hair' color='green' image_id={this.state.init_image_id} image_ids={this.state.image_ids} image_names={this.state.image_names}/>
+          <Box task_type='exposure' color='yellow' image_id={this.state.init_image_id} image_ids={this.state.image_ids} image_names={this.state.image_names}/>
+          <Box task_type='smile' color='red' image_id={this.state.init_image_id} image_ids={this.state.image_ids} image_names={this.state.image_names}/>
+          <Box task_type='head_yaw' color='green' image_id={this.state.init_image_id} image_ids={this.state.image_ids} image_names={this.state.image_names}/>
           
          
         </div>
