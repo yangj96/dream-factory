@@ -1,8 +1,8 @@
-##### Dream Factory — Image Semantic Editing
+## Dream Factory — Image Semantic Editing
 
 This is an image semantic editing app for Google ML Winter Camp.   
 
-#####Frontend Setup
+### Frontend Setup
 
 `npm install`
 
@@ -10,7 +10,7 @@ This is an image semantic editing app for Google ML Winter Camp.
 
 `npm start`
 
-##### Backend Run Server
+### Backend Run Server
 
 `cd backend`
 
@@ -22,9 +22,7 @@ This is an image semantic editing app for Google ML Winter Camp.
 
 Current Web App supports adjusting weights using sliding bar  by clicking mouse or KeyBoard up & down
 
-
-
-##### Train StyleGAN on Human matting Dataset
+### Train StyleGAN on Human matting Dataset
 
 1. Generate crop images from human matting dataset
 
@@ -45,6 +43,8 @@ References:
 [1] Karras, Tero, Samuli Laine, and Timo Aila. "A style-based generator architecture for generative adversarial networks." Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2019.
 
 [2] https://github.com/Puzer/stylegan-encoder
+
+-------
 
 ## StyleGAN &mdash; Encoder for Official TensorFlow Implementation
 
