@@ -6,13 +6,13 @@ This is an image semantic editing app for Google ML Winter Camp.
 
 `npm install`
 
-`cd frontend`
+`cd dream-factory/frontend`
 
 `npm start`
 
 ### Backend Run Server
 
-`cd backend`
+`cd dream-factory/`
 
 `python3 app.py`
 
@@ -20,13 +20,17 @@ This is an image semantic editing app for Google ML Winter Camp.
 
 ------ 2020.1.17 updates
 
-Current Web App supports adjusting weights using sliding bar  by clicking mouse or KeyBoard up & down
+Current Web App supports adjusting weights using sliding bar by clicking mouse or pressing keyboard up & down.
+
+
+
+If you want to view the latent vector generation experiments or do your own experiments, pls check `dream-factory/get_latent_direction.ipynb	`.
 
 ### Train StyleGAN on Human matting Dataset
 
-1. Generate crop images from human matting dataset
+1. Generate crop images from human matting dataset https://www.kaggle.com/laurentmih/aisegmentcom-matting-human-datasets
 
-Run `python crop-generate.py` to detect faces and scaled crop images
+Config dataset directory and run `python crop-generate.py` to detect faces and scaled crop images
 
 2. Use `dataset_tool.py` to tranform image dataset to tfrecord
 
