@@ -63,7 +63,7 @@ class LargeBox extends React.Component<> {
                      onClick={() => this.setState({showGallery: true, galleryOpenFor: 1})}
                      />
                      {idx_arr.map(idx => (
-                        <div class='invisibleImageContainer'><img src={this.state.res_list[idx]}/></div>
+                       <img src={this.state.res_list[idx]}/>
                      ))}
                     <img src={getGanImageUrl(this.state.image_id2)}
                      onClick={() => this.setState({showGallery: true, galleryOpenFor: 2})}

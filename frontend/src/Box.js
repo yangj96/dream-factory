@@ -17,7 +17,7 @@ const task_to_title = {
     head_yaw: 'Yaw Head',
     facial_hair: 'Change Mustache',
     exposure: 'Whitening',
-    smile: 'Change Smile'
+    smile: 'Change Smile',
 };
 
 const task_to_weight_range = {

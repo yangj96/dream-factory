@@ -7,10 +7,16 @@
     max-width: 1000px;
     height: 300px;
     color: black;
+    padding: 0% 3%;
 }
 .container:first-child {
     width: 100%;
     max-width: 2000px;
+    justify-content: center;
+}
+
+.container:first-child > img[src=''], img:not([src]) {
+    flex: 1;
 }
 
 .subTopContainer {
@@ -23,7 +29,9 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    height: 200px;
 }
+
 
 .sliderContainer {
     height: 160px;
@@ -38,8 +46,8 @@
 }
 
 img {
-    width: 200px;
-    height: 200px;
+    width: auto;
+    height: 100%;
     border: 0;
 }
 img[src=''], img:not([src]) {
@@ -48,6 +56,8 @@ img[src=''], img:not([src]) {
 
 .invisibleImageContainer {
     border: #aaaaaa 1px solid;
+    height: 100%;
+    flex: 1;
 }
 
 .chosenImage {
@@ -66,14 +76,13 @@ img[src=''], img:not([src]) {
     height: auto;
 }
 
-
-
 .blue {
     background: #4285F4;
     border-radius: 4;
     margin-bottom: 24;
     border: 0;
     overflow: hidden;
+    opacity: 0.7;
   }
   
 .red {
@@ -82,6 +91,7 @@ img[src=''], img:not([src]) {
     margin-bottom: 24;
     border: 0;
     overflow: hidden;
+    opacity: 0.7;
   }
   
 .yellow {
@@ -90,6 +100,7 @@ img[src=''], img:not([src]) {
     margin-bottom: 24;
     border: 0;
     overflow: hidden;
+    opacity: 0.7;
   }
   
 .green {
@@ -98,4 +109,19 @@ img[src=''], img:not([src]) {
     margin-bottom: 24;
     border: 0;
     overflow: hidden;
+    opacity: 0.7;
   }
+
+
+.ant-radio-button {
+    color: #222222;
+}
+
+.ant-radio-button-wrapper {
+    font-weight: bold;
+}
+.ant-radio-button-wrapper-checked {
+    background: black !important;
+    color: white !important;
+    font-weight: bolder;
+}
