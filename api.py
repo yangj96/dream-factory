@@ -101,9 +101,9 @@ def run(image_id1, task_type, weight, image_id2=None, choice=None):
     
     if isinstance(res, list):
         for i, image in enumerate(res):
-            res[i] = cv2.resize(image, (128, 128))
+            res[i] = cv2.resize(image, (200, 200))
     else:
-        res = cv2.resize(res, (128, 128))
+        res = cv2.resize(res, (200, 200))
         res = [res]
     return res
     
