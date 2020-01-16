@@ -50,3 +50,12 @@
   font-size: 18px;
   color: #eaeaea;
 }
+
+
+.boxContainer {
+  width: 100%;
+  background: grey;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

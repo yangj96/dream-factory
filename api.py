@@ -5,7 +5,7 @@ from os.path import join
 import cv2
 
 import config
-from config import dlatent_path, emotion_map, color_map
+from config import dlatent_path, emotion_map, hair_color_map
 import dnnlib
 import dnnlib.tflib as tflib
 from encoder.generator_model import Generator
@@ -50,11 +50,13 @@ def load_dlatent(image_id):
     dlatent = dlatent.reshape(-1, 18, 512)
     return dlatent
 
-def run_fuse(image_id1, image_id2, weight):
+def run_fuse(image_id1, image_id2):
     dlatent1 = load_dlatent(image_id1)
     dlatent2 = load_dlatent(image_id2)
-    new_dlatent = dlatent1 * weight + dlatent2 * (1 - weight)
-    res = generator.generate_images(new_dlatent)[0]
+    res = []
+    for w in [0.2, 0.35, 0.45, 0.55, 0.7, 0.8]:
+        new_dlatent = dlatent1 * (1 - w) + dlatent2 * w
+        res.append(generator.generate_images(new_dlatent)[0])
     return res
 
 def run_simple(image_id, weight, task):
@@ -76,10 +78,10 @@ def run_emotion(image_id, weight, choice):
 
 def run_hair(image_id, weight, choice):
     dlatent = load_dlatent(image_id)
-    idx = color_map[choice]
+    idx = hair_color_map[choice]
     dlatent_direction = dlatent_directions['hair'][..., idx]
     dlatent = dlatent + weight * dlatent_direction
-    res = generator.generate_images(dlatent_direction)[0]
+    res = generator.generate_images(dlatent)[0]
     return res
 
 def run(image_id1, task_type, weight, image_id2=None, choice=None):
@@ -87,13 +89,13 @@ def run(image_id1, task_type, weight, image_id2=None, choice=None):
     assert task_type != 'fuse' or image_id2 is not None
     
     if task_type == 'fuse':
-        res = run_fuse(image_id1, image_id2, weight)
+        res = run_fuse(image_id1, image_id2)
     elif task_type == 'emotion':
         assert choice in emotion_map
         res = run_emotion(image_id1, weight, choice)
     elif task_type == 'hair':
-        assert choice in color_map
-        res = run_emotion(image_id1, weight, choice)
+        assert choice in hair_color_map
+        res = run_hair(image_id1, weight, choice)
     else:
         res = run_simple(image_id1, weight, task_type)
     
@@ -102,5 +104,6 @@ def run(image_id1, task_type, weight, image_id2=None, choice=None):
             res[i] = cv2.resize(image, (128, 128))
     else:
         res = cv2.resize(res, (128, 128))
-    return [res]
+        res = [res]
+    return res
     

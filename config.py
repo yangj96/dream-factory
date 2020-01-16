@@ -21,7 +21,7 @@ pretrained_model_path = 'cache/karras2019stylegan-ffhq-1024x1024.pkl'
 
 dlatent_path = './data'
 
-color_map = {'brown': 0, 'gray': 1, 'blond': 2, 'black': 3, 'red': 4}
+hair_color_map = {'brown': 0, 'gray': 1, 'blond': 2, 'black': 3, 'red': 4}
 
 emotion_map = {'anger': 0, 'contempt': 1, 'disgust': 2, 'fear': 3, 'happiness': 4, 'neutral': 5, 'sadness': 6, 'surprise': 7}
 
