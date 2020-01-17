@@ -44,9 +44,11 @@ Config dataset directory and run `python crop-generate.py` to detect faces and s
 
 Run `python dataset_tool.py create_from_images datasets/human-matting crop-images`
 
-3. Modity train params and configs in `train.py` and `config.py` 
+3. Modity train params and configs in `train.py` , `train_loop.py`and `config.py` 
 
  Run `python train.py`
+
+You can download our pretrained model on human matting toy datasets for 50 epochs on [Google Drive](https://drive.google.com/open?id=14wLVkWM0wY6SgRPbTD3FUBq1DchVHNoZ).
 
 
 
