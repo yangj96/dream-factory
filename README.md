@@ -44,7 +44,7 @@ Config dataset directory and run `python crop-generate.py` to detect faces and s
 
 Run `python dataset_tool.py create_from_images datasets/human-matting crop-images`
 
-3. Modity train params and configs in `train.py` , `train_loop.py`and `config.py` 
+3. Modity train params and configs in `train.py` , `training/training_loop.py`and `config.py` 
 
  Run `python train.py`
 
