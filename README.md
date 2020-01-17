@@ -1,13 +1,21 @@
 ## Dream Factory — Image Semantic Editing
 
-This is an image semantic editing app for Google ML Winter Camp.   
+This is an image semantic editing app for Google ML Winter Camp. 
+
+### Data Setup
+download https://drive.google.com/open?id=1nzqusMz99PzIhVdYo2WxDc5sBF4t2KZu to './data'
+download https://drive.google.com/open?id=1nzqusMz99PzIhVdYo2WxDc5sBF4t2KZu and unzip to './images'
+download https://drive.google.com/uc?id=1MEGjdvVpUsu1jB4zrXZN7Y4kBBOzizDQ to './cache'
+download https://drive.google.com/uc?id=1xMM3AFq0r014IIhBLiMCjKJJvbhLUQ9t and unzip to './cache'
+download https://drive.google.com/open?id=1aT59NFy9-bNyXjDuZOTMl0qX0jmZc6Zb to './data'
+
+run `python encoder_images.py --src_dir ./images --dlatent_dir ./data --generated_images_dir ./data` to generate latent vectors.
+run `python learn_latent_direction` to generate editing direction in the latent space. 
 
 ### Frontend Setup
-
-`npm install`
-
+Note that you need to change the backend config in `config.js`
 `cd dream-factory/frontend`
-
+`npm install`
 `npm start`
 
 ### Backend Run Server
