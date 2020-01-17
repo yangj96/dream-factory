@@ -54,7 +54,7 @@ References:
 
 [1] Karras, Tero, Samuli Laine, and Timo Aila. "A style-based generator architecture for generative adversarial networks." Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2019.
 
-[2] https://github.com/Puzer/stylegan-encoder
+[2] https://github.com/pbaylies/stylegan-encoder
 
 -------
 
